@@ -109,12 +109,12 @@
       <h2 class="text-2xl font-bold">Nuestros entrenadores</h2>
       <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-          <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8a7b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
+          <img src="https://amenzing.com/wp-content/uploads/2020/12/Captura-de-pantalla-2020-12-14-a-las-22.43.06.jpg" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
           <div class="mt-3 font-semibold">Ángel Nieto</div>
           <div class="text-xs text-gray-500">Fuerza & Movilidad</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
+          <img src="https://static.wikia.nocookie.net/seriesspain/images/4/46/Ongombo.jpg/revision/latest/thumbnail/width/360/height/360?cb=20231218003950&path-prefix=es" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
           <div class="mt-3 font-semibold">Frederic Sadibou</div>
           <div class="text-xs text-gray-500">Entrenamiento funcional</div>
         </div>
@@ -124,7 +124,7 @@
           <div class="text-xs text-gray-500">Yoga & Recuperación</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
+          <img src="https://eltelevisero.huffingtonpost.es/wp-content/uploads/2021/07/antonio-recio-lqsa-.jpg" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
           <div class="mt-3 font-semibold">Manuel Tocón</div>
           <div class="text-xs text-gray-500">Cardio & HIIT</div>
         </div>
