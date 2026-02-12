@@ -110,22 +110,22 @@
       <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
           <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8a7b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
-          <div class="mt-3 font-semibold">Laura Pérez</div>
+          <div class="mt-3 font-semibold">Ángel Nieto</div>
           <div class="text-xs text-gray-500">Fuerza & Movilidad</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
           <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
-          <div class="mt-3 font-semibold">Jorge Díaz</div>
+          <div class="mt-3 font-semibold">Frederic Sadibou</div>
           <div class="text-xs text-gray-500">Entrenamiento funcional</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
-          <div class="mt-3 font-semibold">Ana Gómez</div>
+          <img src="https://img.asmedia.epimg.net/resizer/v2/6EGRX5D54RF23IPWXXSJMYSQTY.png?auth=95f64a9c9c05c37e565b8496e211f660a3eeb4a51360f52d69537eedde47fbf7&width=1200&height=1200&smart=true" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
+          <div class="mt-3 font-semibold">Héctor Ramos</div>
           <div class="text-xs text-gray-500">Yoga & Recuperación</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
           <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
-          <div class="mt-3 font-semibold">Carlos Ruiz</div>
+          <div class="mt-3 font-semibold">Manuel Tocón</div>
           <div class="text-xs text-gray-500">Cardio & HIIT</div>
         </div>
       </div>
