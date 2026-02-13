@@ -16,7 +16,7 @@
     <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
       <h3 class="font-semibold">{{ $entity->field1 }}</h3>
       <p>{{ $entity->field2 }}</p>
-
+      
       <!-- Mostrar la imagen asociada -->
       <img src="{{ asset('storage/' . $entity->image) }}" alt="Imagen de clase" class="rounded-lg w-full h-72 object-cover mt-2">
 
