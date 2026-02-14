@@ -4,10 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CloverFit — Tu gimnasio, tu ritmo</title>
-<<<<<<< HEAD
   <!-- Tailwind CDN -->
-=======
->>>>>>> d120ea84ed0c50f84d2a70341e755207d90b8bd9
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="description" content="CloverFit - gimnasio local: clases, entrenadores, membresías y más." />
 </head>

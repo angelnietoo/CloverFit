@@ -3,33 +3,24 @@
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EntityNameController; //ruta del crud de la entidad
-use App\Http\Controllers\EntityNameController;
-
+use App\Http\Controllers\EntityNameController; // Controlador para las entidades
 
 // Ruta principal
 Route::get('/', [TaskController::class, 'index'])->name('index');
 
-// Rutas para autenticación (login, registro, restablecimiento de contraseña, etc.)
+// Rutas de autenticación (login, registro, restablecimiento de contraseña, etc.)
 Auth::routes();
 
 // Ruta para el formulario de contacto
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
-// Ruta de inicio después del login (si deseas hacer algo adicional en esta ruta)
+// Ruta de inicio después del login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-// Rutas del recurso para la entidad
+// Rutas del recurso para las entidades
 Route::resource('entities', EntityNameController::class);
 
-Route::get('entities/restore/{id}', [EntityNameController::class, 'restore'])->name('entities.restore');
-
-Route::get('entities/trashed', [EntityNameController::class, 'trashed'])->name('entities.trashed');
-
-
-
+// Rutas adicionales para las entidades
+Route::get('entities/trashed', [EntityNameController::class, 'trashed'])->name('entities.trashed'); // Mostrar entidades eliminadas
+Route::post('entities/{id}/restore', [EntityNameController::class, 'restore'])->name('entities.restore'); // Restaurar entidad eliminada
+Route::delete('entities/{id}', [EntityNameController::class, 'destroy'])->name('entities.destroy'); // Eliminar entidad
