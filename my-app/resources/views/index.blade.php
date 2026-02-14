@@ -4,43 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CloverFit — Tu gimnasio, tu ritmo</title>
+<<<<<<< HEAD
   <!-- Tailwind CDN -->
+=======
+>>>>>>> d120ea84ed0c50f84d2a70341e755207d90b8bd9
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="description" content="CloverFit - gimnasio local: clases, entrenadores, membresías y más." />
 </head>
 <body class="antialiased bg-gray-50 text-gray-800">
-  <!-- NAV -->
-  <header class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="{{ url('/') }}" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-green-500 rounded-md flex items-center justify-center text-white font-bold">CF</div>
-        <span class="font-semibold text-lg">CloverFit</span>
-      </a>
 
-      <nav class="hidden md:flex gap-6 items-center">
-        <a href="#clases" class="hover:text-green-600">Clases</a>
-        <a href="#entrenadores" class="hover:text-green-600">Entrenadores</a>
-        <a href="#membresias" class="hover:text-green-600">Membresías</a>
-        <a href="#contacto" class="hover:text-green-600">Contacto</a>
-      </nav>
+  <h1 class="text-3xl font-bold mb-6">Listado de Entidades</h1>
 
-      <div class="flex items-center gap-3">
-        @guest
-          <a href="{{ route('login') }}" class="text-sm">Iniciar sesión</a>
-          <a href="{{ route('register') }}" class="ml-2 inline-block px-4 py-2 rounded-md bg-green-500 text-white text-sm">Regístrate</a>
-        @else
-          <a href="{{ route('dashboard') }}" class="inline-block px-4 py-2 rounded-md bg-gray-100 text-sm">Panel</a>
-        @endguest
-      </div>
+  <!-- Mostrar todas las entidades -->
+  @foreach ($entities as $entity)
+    <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+      <h3 class="font-semibold">{{ $entity->field1 }}</h3>
+      <p>{{ $entity->field2 }}</p>
+
+      <!-- Mostrar la imagen asociada -->
+      <img src="{{ asset('storage/' . $entity->image) }}" alt="Imagen de clase" class="rounded-lg w-full h-72 object-cover mt-2">
+
+      <!-- Si la entidad está eliminada, mostrar la opción para restaurar -->
+      @if ($entity->deleted_at)
+        <p class="text-red-500">Esta entidad ha sido eliminada.</p>
+        <a href="{{ route('entities.restore', $entity->id) }}" class="text-green-600">Restaurar</a>
+      @else
+        <!-- Si no está eliminada, mostrar las opciones de editar y eliminar -->
+        <div class="mt-4 flex gap-4">
+          <a href="{{ route('entities.edit', $entity->id) }}" class="text-blue-600">Editar</a>
+          
+          <!-- Formulario para eliminar (SoftDelete) -->
+          <form action="{{ route('entities.destroy', $entity->id) }}" method="POST" style="display:inline;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="text-red-600">Eliminar</button>
+          </form>
+        </div>
+      @endif
     </div>
-  </header>
+  @endforeach
 
-  <!-- HERO -->
-  <main class="container mx-auto px-6 py-12">
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">CloverFit — Fuerza, estética y comunidad</h1>
-        <p class="mt-4 text-gray-600">Clases dirigidas, entrenadores certificados y planes de membresía pensados para que des lo mejor de ti. Nos adaptamos a tu ritmo.</p>
+  <!-- Enlace para crear una nueva entidad -->
+  <a href="{{ route('entities.create') }}" class="inline-block px-6 py-3 rounded-md bg-green-600 text-white font-medium mt-6">Crear Nueva Entidad</a>
 
         <div class="mt-6 flex gap-3">
           <a href="#membresias" class="inline-block px-6 py-3 rounded-md bg-green-600 text-white font-medium">Únete hoy</a>
