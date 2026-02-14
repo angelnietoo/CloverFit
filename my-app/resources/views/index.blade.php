@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CloverFit — Tu gimnasio, tu ritmo</title>
-  <!-- Tailwind CDN (rápido para prototipos) -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="description" content="CloverFit - gimnasio local: clases, entrenadores, membresías y más." />
 </head>
@@ -114,7 +114,7 @@
           <div class="text-xs text-gray-500">Fuerza & Movilidad</div>
         </div>
         <div class="bg-white rounded-lg p-4 shadow-sm text-center">
-          <img src="https://static.wikia.nocookie.net/seriesspain/images/4/46/Ongombo.jpg/revision/latest/thumbnail/width/360/height/360?cb=20231218003950&path-prefix=es" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHM7Ldvm-4jrtiLdJ99TzvLsNR_4pLYsnTg&s" alt="entrenador" class="mx-auto w-24 h-24 rounded-full object-cover" />
           <div class="mt-3 font-semibold">Frederic Sadibou</div>
           <div class="text-xs text-gray-500">Entrenamiento funcional</div>
         </div>
