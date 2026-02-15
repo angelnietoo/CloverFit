@@ -14,6 +14,17 @@ Auth::routes();
 // Ruta para el formulario de contacto
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+// Ruta para seleccionar suscripción
+Route::get('/suscripcion', function () {
+    return view('suscripcion');
+})->name('suscripcion.seleccionar');
+
+// Ruta para procesar el pago de suscripción
+Route::post('/suscripcion/pagar', function () {
+    // Aquí iría la lógica de pago
+    return redirect('/')->with('success', 'Suscripción procesada correctamente');
+})->name('suscripcion.pagar');
+
 // Ruta de inicio después del login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
