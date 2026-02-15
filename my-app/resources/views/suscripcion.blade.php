@@ -6,7 +6,7 @@
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.06),transparent_60%)]"></div>
 </div>
 
-<div class="relative px-4 py-8 sm:px-6 lg:px-8 flex flex-col items-center justify-start min-h-screen">
+<div class="relative px-4 py-8 sm:px-6 lg:px-8 flex flex-col items-center justify-start w-full pb-16 sm:pb-20">
 
     <div class="w-full max-w-3xl">
         <div class="text-center">
@@ -47,8 +47,12 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€20</div>
+                                <div class="text-3xl font-extrabold text-red-400">€19,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
+                            </div>
+
+                            <div class="mt-2 text-xs text-green-400">
+                                Primer mes: <span class="font-bold">€9.99</span>
                             </div>
 
                             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
@@ -82,8 +86,12 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€35</div>
+                                <div class="text-3xl font-extrabold text-red-400">€34,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
+                            </div>
+
+                            <div class="mt-2 text-xs text-green-400">
+                                Primer mes: <span class="font-bold">€9.99</span>
                             </div>
 
                             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
@@ -117,8 +125,12 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€50</div>
+                                <div class="text-3xl font-extrabold text-red-400">€45,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
+                            </div>
+
+                            <div class="mt-2 text-xs text-green-400">
+                                Primer mes: <span class="font-bold">€9.99</span>
                             </div>
 
                             <ul class="mt-4 space-y-2 text-sm text-neutral-300">

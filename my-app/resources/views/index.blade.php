@@ -108,7 +108,8 @@
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
           <h3 class="text-xl font-semibold">Básica</h3>
           <p class="mt-2 text-neutral-300">Acceso a todas las clases y zona estándar.</p>
-          <p class="text-3xl font-extrabold mt-4 text-red-400">€20<span class="text-base text-neutral-300 font-medium">/mes</span></p>
+          <p class="text-3xl font-extrabold mt-4 text-red-400">€19,99<span class="text-base text-neutral-300 font-medium">/mes</span></p>
+          <p class="text-xs text-green-400 mt-2">Primer mes: <span class="font-bold">€9.99</span></p>
           <a href="{{ route('suscripcion.seleccionar') }}"
              class="mt-6 inline-block w-full text-center px-6 py-3 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500 transition">
             Seleccionar
@@ -121,7 +122,8 @@
           </div>
           <h3 class="text-xl font-semibold mt-3">Premium</h3>
           <p class="mt-2 text-neutral-300">Zonas premium + 4 sesiones con entrenador personal.</p>
-          <p class="text-3xl font-extrabold mt-4 text-red-400">€40<span class="text-base text-neutral-300 font-medium">/mes</span></p>
+          <p class="text-3xl font-extrabold mt-4 text-red-400">€35<span class="text-base text-neutral-300 font-medium">/mes</span></p>
+          <p class="text-xs text-green-400 mt-2">Primer mes: <span class="font-bold">€9.99</span></p>
           <a href="{{ route('suscripcion.seleccionar') }}"
              class="mt-6 inline-block w-full text-center px-6 py-3 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500 transition">
             Seleccionar
@@ -131,7 +133,8 @@
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
           <h3 class="text-xl font-semibold">VIP</h3>
           <p class="mt-2 text-neutral-300">Acceso total + zonas exclusivas + entrenador personal.</p>
-          <p class="text-3xl font-extrabold mt-4 text-red-400">€60<span class="text-base text-neutral-300 font-medium">/mes</span></p>
+          <p class="text-3xl font-extrabold mt-4 text-red-400">€45<span class="text-base text-neutral-300 font-medium">/mes</span></p>
+          <p class="text-xs text-green-400 mt-2">Primer mes: <span class="font-bold">€9.99</span></p>
           <a href="{{ route('suscripcion.seleccionar') }}"
              class="mt-6 inline-block w-full text-center px-6 py-3 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500 transition">
             Seleccionar

@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="min-h-[70vh] relative flex items-center justify-center px-4 py-12">
+<div class="fixed inset-0 -z-20 bg-neutral-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.18),transparent_55%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.06),transparent_60%)]"></div>
+</div>
 
-    {{-- Fondo pro (gradiente + glow) --}}
-    <div class="absolute inset-0 -z-10 bg-neutral-950">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.18),transparent_55%)]"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.06),transparent_60%)]"></div>
-    </div>
+<div class="relative h-screen flex items-center justify-center px-4">
 
     <div class="w-full max-w-md">
         <div class="relative rounded-2xl border border-white/10 bg-neutral-900/70 backdrop-blur-xl shadow-2xl p-6 sm:p-8 overflow-hidden">
@@ -17,7 +16,7 @@
 
             <div class="mb-6">
                 <h1 class="text-2xl font-extrabold tracking-tight text-white">
-                    {{ __('Login') }}
+                    Inicio de sesión
                 </h1>
                 <p class="mt-1 text-sm text-neutral-300">
                     Accede a tu cuenta para entrar al panel.

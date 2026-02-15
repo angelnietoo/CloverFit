@@ -16,7 +16,7 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-neutral-950 text-white antialiased">
+<body class="bg-neutral-950 text-white antialiased overflow-y-auto">
     <div id="app">
         <nav class="bg-neutral-950 border-b border-white/10">
             <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -65,7 +65,7 @@
             </div>
         </nav>
 
-        <main class="max-w-6xl mx-auto px-6 py-8">
+        <main class="max-w-full mx-auto px-0 py-0">
             @yield('content')
         </main>
     </div>
