@@ -33,10 +33,18 @@
             Regístrate
           </a>
         @else
-          <a href="{{ route('dashboard') }}"
-             class="inline-block px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
-            Panel
-          </a>
+          <div class="flex items-center gap-4">
+            <div class="text-sm">
+              <p class="text-neutral-200">¡Bienvenido!</p>
+              <p class="text-red-500 font-semibold">{{ Auth::user()->name }}</p>
+            </div>
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+              @csrf
+              <button type="submit" class="px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
+                Cerrar sesión
+              </button>
+            </form>
+          </div>
         @endguest
       </div>
     </div>
