@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Crear la tabla `user` (renombrada de `users`)
-        Schema::create('user', function (Blueprint $table) {
+        // Crear la tabla `users`
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -32,7 +32,7 @@ return new class extends Migration
         // Crear la tabla `sessions`
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index(); // Aquí cambiamos la tabla `users` a `user`
+            $table->foreignId('user_id')->nullable()->index()->constrained('users')->onDelete('cascade');
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');
@@ -45,8 +45,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user'); // Eliminar la tabla `user`
-        Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('users');
     }
 };
