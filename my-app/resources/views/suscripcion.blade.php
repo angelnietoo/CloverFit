@@ -139,6 +139,7 @@
                                 <li class="flex gap-2"><span class="text-red-400">•</span> Prioridad en reservas</li>
                                 <li class="flex gap-2"><span class="text-red-400">•</span> Acceso a piscina privada</li>
                                 <li class="flex gap-2"><span class="text-red-400">•</span> Máquinas de rayos UVA</li>
+                                <li class="flex gap-2"><span class="text-red-400">•</span> Zona exclusiva de fisioterapia</li>
                             </ul>
 
                             <div class="mt-5 text-xs text-neutral-500">
@@ -173,12 +174,11 @@
 
         {{-- Información de descuento --}}
         <div class="mt-8 text-center text-sm text-neutral-400">
-        Si tienes tarjeta de Familia Numerosa o carnet de estudiante, obtendrás un descuento del 15% en tu plan. 
-        Sin embargo, debido a las políticas de verificación y seguridad, este tipo de documentos deben ser presentados
-        físicamente en el establecimiento para aplicar el descuento. 
-        En caso de realizar el pago a través de la página web, no podrás acceder a este beneficio en línea.
+            Si tienes tarjeta de Familia Numerosa o carnet de estudiante, obtendrás un descuento del 15% en tu plan. 
+            Sin embargo, debido a las políticas de verificación y la implementación de inteligencia artificial en el sistema, 
+            este tipo de documentos deben ser presentados físicamente en el establecimiento para aplicar el descuento. 
+            En caso de realizar el pago a través de la página web, no podrás acceder a este beneficio en línea.
         </div>
-
 
         {{-- Tabla comparativa --}}
         <div class="mt-12">
@@ -197,7 +197,102 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-white/5">
-                        <!-- Rest of the table remains unchanged -->
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Acceso a la sala</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Zona estándar</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Zonas premium</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Clases básicas</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Clases dirigidas (full)</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Sesiones de asesoría</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-neutral-400 text-sm">-</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-sm text-neutral-300">1/mes</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-sm text-neutral-300">Ilimitadas</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Entrenador personal</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-neutral-900/30 transition">
+                            <td class="px-6 py-4 text-sm text-neutral-300">Prioridad en reservas</td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="text-red-400">✗</span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-green-400">✓</span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
