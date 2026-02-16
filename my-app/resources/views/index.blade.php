@@ -305,5 +305,29 @@
     </footer>
 
   </main>
+ <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
+<section class="mt-16 flex justify-center items-center space-x-8">
+  <div class="w-1/2">
+    <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
+    <p class="mt-4 text-neutral-300">
+      Dirección:<br>
+      Calle Ave del Paraíso, nº6, El Puerto de Santa María, 11500, Cádiz
+    </p>
+    <p class="mt-4 text-neutral-300">
+      Horario:<br>
+      Lunes a Viernes: 08:00 a 21:00
+    </p>
+  </div>
+
+  <!-- Mapa pequeño -->
+  <div class="w-1/2 h-40"> <!-- Cambié el valor de h-60 a h-40 -->
+    <x-maps-leaflet 
+      :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
+      :zoomLevel="15" 
+      :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
+    />
+  </div>
+</section>
+
 </body>
 </html>

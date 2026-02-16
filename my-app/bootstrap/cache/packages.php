@@ -52,6 +52,17 @@
       0 => 'Laravel\\Ui\\UiServiceProvider',
     ),
   ),
+  'larswiegers/laravel-maps' => 
+  array (
+    'aliases' => 
+    array (
+      'LaravelMaps' => 'Larswiegers\\LaravelMaps\\LaravelMapsFacade',
+    ),
+    'providers' => 
+    array (
+      0 => 'Larswiegers\\LaravelMaps\\LaravelMapsServiceProvider',
+    ),
+  ),
   'nesbot/carbon' => 
   array (
     'providers' => 
