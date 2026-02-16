@@ -44,7 +44,7 @@
 
   <!-- IMAGE BELOW HEADER -->
   <div class="w-full relative overflow-hidden" style="height: 650px;">
-    <img src="{{ asset('imagenes/gimnasio.jpg') }}"
+    <img src="{{ asset('imagenes/cloverfit.jpg') }}"
          alt="Gimnasio"
          class="w-full h-full object-cover object-top" />
 
