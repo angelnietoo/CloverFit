@@ -298,5 +298,10 @@
             </div>
         </div>
     </div>
+
+    {{-- Aquí se añade la imagen de CloverFit2 --}}
+    <div class="mt-8 text-center">
+        <img src="{{ asset('imagenes/cloverfit2.jpg') }}" alt="CloverFit Imagen" class="rounded-2xl">
+    </div>
 </div>
 @endsection
