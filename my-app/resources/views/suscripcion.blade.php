@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€34,99</div>
+                                <div class="text-3xl font-extrabold text-red-400">€24,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
                             </div>
 
@@ -125,7 +125,7 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€45,99</div>
+                                <div class="text-3xl font-extrabold text-red-400">€35,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
                             </div>
 
