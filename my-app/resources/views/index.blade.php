@@ -85,7 +85,7 @@
 
       <div class="relative">
         <div class="rounded-2xl p-4 border border-white/10 bg-neutral-900 shadow-lg">
-          <img src="{{ asset('imagenes/gimnasio.jpg') }}" alt="gimnasio"
+          <img src="{{ asset('imagenes/cloverfit2.jpg') }}" alt="gimnasio"
                class="rounded-xl w-full h-80 object-cover" />
         </div>
 
