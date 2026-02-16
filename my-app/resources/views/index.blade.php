@@ -114,7 +114,7 @@
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
-          <h3 class="text-xl font-semibold">Básica</h3>
+          <h3 class="text-xl font-semibold">FIT</h3>
 
           <!-- PRECIO ARRIBA -->
           <p class="text-3xl font-extrabold mt-3 text-red-400">
@@ -138,11 +138,11 @@
             Más popular
           </div>
 
-          <h3 class="text-xl font-semibold mt-3">Premium</h3>
+          <h3 class="text-xl font-semibold mt-3">PRO</h3>
 
           <!-- PRECIO ARRIBA -->
           <p class="text-3xl font-extrabold mt-3 text-red-400">
-            €34.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+            €24.99<span class="text-base text-neutral-300 font-medium">/mes</span>
           </p>
           <p class="text-xs text-green-400 mt-1">
             Primer mes: <span class="font-bold">€9,99</span>
@@ -158,11 +158,11 @@
         </div>
 
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
-          <h3 class="text-xl font-semibold">VIP</h3>
+          <h3 class="text-xl font-semibold">ELITE</h3>
 
           <!-- PRECIO ARRIBA -->
           <p class="text-3xl font-extrabold mt-3 text-red-400">
-            €45.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+            €35.99<span class="text-base text-neutral-300 font-medium">/mes</span>
           </p>
           <p class="text-xs text-green-400 mt-1">
             Primer mes: <span class="font-bold">€9,99</span>
