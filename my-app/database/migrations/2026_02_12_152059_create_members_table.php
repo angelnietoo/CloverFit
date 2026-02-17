@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('members', function (Blueprint $table) {
+        // Crear la tabla `member` (renombrada de `members`)
+        Schema::create('member', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('member'); // Eliminar la tabla `member`
     }
 };
