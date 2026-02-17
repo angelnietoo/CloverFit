@@ -33,6 +33,12 @@
             Regístrate
           </a>
         @else
+          @if (isset(Auth::user()->role) && Auth::user()->role === 'admin')
+            <a href="{{ route('admin.dashboard') }}"
+               class="inline-block px-4 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition">
+              Dashboard
+            </a>
+          @endif
           <div class="flex items-center gap-4">
             <div class="text-sm">
               <p class="text-neutral-200">¡Bienvenido!</p>
