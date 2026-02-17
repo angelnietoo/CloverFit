@@ -311,11 +311,11 @@
     <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
     <p class="mt-4 text-neutral-300">
       Dirección:<br>
-      Calle Ave del Paraíso, nº6, El Puerto de Santa María, 11500, Cádiz
+      Calle Ejemplo 123, Ciudad — 28000
     </p>
     <p class="mt-4 text-neutral-300">
       Horario:<br>
-      Lunes a Viernes: 08:00 a 21:00
+      Lun - Vie: 06:00 - 22:00 · Sáb: 08:00 - 14:00
     </p>
   </div>
 
