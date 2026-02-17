@@ -13,6 +13,7 @@
                 </div>
             @endif
 
+            <!-- Sección de texto con fondo blanco y texto negro -->
             <div class="bg-white p-6 rounded-xl shadow-xl">
                 <p class="text-lg font-semibold text-gray-800">¡Has iniciado sesión con éxito!</p>
                 <p class="mt-4 text-sm text-gray-600">Desde aquí puedes gestionar tu perfil, suscripciones y mucho más.</p>
@@ -20,5 +21,4 @@
         </div>
     </div>
 </div>
-
 @endsection

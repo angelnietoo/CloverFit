@@ -2,65 +2,135 @@
 
 @section('content')
 
-<div class="container mx-auto mt-8">
-    <div class="max-w-4xl mx-auto bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white shadow-xl rounded-3xl p-10">
-        <h1 class="text-4xl font-extrabold mb-6 text-center tracking-wide">Bienvenido, {{ $user->name }}</h1>
+<div class="fixed inset-0 -z-20 bg-neutral-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.18),transparent_55%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.06),transparent_60%)]"></div>
+</div>
 
-        @if(session('success'))
-            <div class="mb-6 p-5 bg-green-100 text-green-800 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                {{ session('success') }}
+<div class="relative py-16 px-4"> <!-- Ajustado para dar espacio arriba y evitar centrado vertical -->
+
+    <div class="w-full max-w-2xl mx-auto"> <!-- Cambié max-w-md a max-w-2xl para hacerlo más ancho -->
+        <div class="relative rounded-2xl border border-white/10 bg-neutral-900/70 backdrop-blur-xl shadow-2xl p-6 sm:p-8 overflow-hidden">
+
+            {{-- brillo superior --}}
+            <div class="pointer-events-none absolute -top-24 left-1/2 h-48 w-[32rem] -translate-x-1/2 rounded-full bg-red-500/20 blur-3xl"></div>
+
+            <div class="mb-6">
+                <h1 class="text-2xl font-extrabold tracking-tight text-white">
+                    Editar Perfil
+                </h1>
+                <p class="mt-1 text-sm text-neutral-300">
+                    Actualiza tus datos para mantener tu perfil al día.
+                </p>
             </div>
-        @endif
 
-        @if($errors->any())
-            <div class="mb-6 p-5 bg-red-100 text-red-800 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                <ul class="list-disc pl-5">
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Perfil Section -->
-            <div class="bg-white p-8 rounded-2xl shadow-2xl hover:shadow-xl transition-all duration-300">
-                <h2 class="text-2xl font-semibold mb-4 text-red-500 tracking-wide">Perfil</h2>
-                <form action="{{ route('profile.update') }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700">Nombre</label>
-                        <input type="text" name="name" value="{{ old('name', $user->name) }}" class="w-full border-2 border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400" required>
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" name="email" value="{{ old('email', $user->email) }}" class="w-full border-2 border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400" required>
-                    </div>
-                    <div class="mt-6">
-                        <button type="submit" class="w-full px-6 py-3 bg-red-600 text-white font-semibold rounded-md hover:bg-red-500 transform hover:scale-105 transition duration-300">
-                            Guardar perfil
-                        </button>
-                    </div>
-                </form>
-                <div class="mt-6 text-sm text-gray-600">
-                    <div><strong>Verificado:</strong> {{ $user->email_verified_at ? 'Sí' : 'No' }}</div>
-                    <div><strong>Creado:</strong> {{ $user->created_at->format('d/m/Y H:i') }}</div>
+            {{-- Mensaje general de error (si falla la validación) --}}
+            @if ($errors->any())
+                <div class="mb-4 rounded-xl border border-red-500/25 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                    <span class="font-semibold">Ups:</span> revisa los campos, hay datos incorrectos.
                 </div>
-            </div>
+            @endif
 
-            <!-- Suscripciones Section -->
-            <div class="bg-white p-8 rounded-2xl shadow-2xl hover:shadow-xl transition-all duration-300">
-                <h2 class="text-2xl font-semibold mb-4 text-red-500 tracking-wide">Suscripciones</h2>
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-md transform hover:scale-105 transition duration-300">
-                    <p class="mb-6">Estado: <strong class="text-red-600">No hay suscripción activa</strong></p>
-                    <p class="mb-6 text-sm text-gray-600">Puedes seleccionar una suscripción y gestionarla desde la página de suscripciones.</p>
-                    <a href="{{ route('suscripcion.seleccionar') }}" class="inline-block px-6 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-500 transform hover:scale-105 transition duration-300">
-                        Gestionar suscripción
-                    </a>
+            <form method="POST" action="{{ route('profile.update') }}" class="space-y-4">
+                @csrf
+                @method('PUT')
+
+                {{-- Nombre --}}
+                <div>
+                    <label for="name" class="block text-sm font-medium text-neutral-200">
+                        Nombre
+                    </label>
+                    <div class="mt-1">
+                        <input
+                            id="name"
+                            type="text"
+                            name="name"
+                            value="{{ old('name', $user->name) }}"
+                            required
+                            class="w-full rounded-xl bg-neutral-950/70 border border-white/10 px-3.5 py-2.5 text-white placeholder-neutral-500
+                                   shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]
+                                   transition
+                                   focus:outline-none focus:ring-2 focus:ring-red-500/60 focus:border-red-500/40
+                                   @error('name') border-red-500/60 focus:ring-red-500/60 focus:border-red-500/60 @enderror"
+                        >
+                    </div>
+
+                    @error('name')
+                        <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
+                    @enderror
                 </div>
-            </div>
+
+                {{-- Email --}}
+                <div>
+                    <label for="email" class="block text-sm font-medium text-neutral-200">
+                        Correo Electrónico
+                    </label>
+                    <div class="mt-1">
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            value="{{ old('email', $user->email) }}"
+                            required
+                            autocomplete="email"
+                            class="w-full rounded-xl bg-neutral-950/70 border border-white/10 px-3.5 py-2.5 text-white placeholder-neutral-500
+                                   shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]
+                                   transition
+                                   focus:outline-none focus:ring-2 focus:ring-red-500/60 focus:border-red-500/40
+                                   @error('email') border-red-500/60 focus:ring-red-500/60 focus:border-red-500/60 @enderror"
+                        >
+                    </div>
+
+                    @error('email')
+                        <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                {{-- Contraseña --}}
+                <div>
+                    <label for="password" class="block text-sm font-medium text-neutral-200">
+                        Contraseña
+                    </label>
+                    <div class="mt-1">
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            required
+                            autocomplete="current-password"
+                            placeholder="••••••••"
+                            class="w-full rounded-xl bg-neutral-950/70 border border-white/10 px-3.5 py-2.5 text-white placeholder-neutral-500
+                                   shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]
+                                   transition
+                                   focus:outline-none focus:ring-2 focus:ring-red-500/60 focus:border-red-500/40
+                                   @error('password') border-red-500/60 focus:ring-red-500/60 focus:border-red-500/60 @enderror"
+                        >
+                    </div>
+
+                    @error('password')
+                        <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                {{-- Botón de Guardar --}}
+                <button
+                    type="submit"
+                    class="w-full mt-2 inline-flex items-center justify-center rounded-xl px-4 py-2.5
+                           font-semibold text-white transition
+                           bg-gradient-to-r from-red-600 to-red-500
+                           hover:from-red-500 hover:to-red-400
+                           shadow-lg shadow-red-500/10
+                           active:translate-y-[1px] active:shadow-red-500/5"
+                >
+                    Guardar perfil
+                </button>
+            </form>
+
         </div>
+
+        <p class="mt-4 text-center text-xs text-neutral-500">
+            © {{ date('Y') }} CloverFit
+        </p>
     </div>
 </div>
 

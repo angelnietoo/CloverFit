@@ -40,6 +40,7 @@
                             </a>
                         @endif
                     @else
+                        <!-- Botón de Dashboard con tamaño consistente -->
                         <a class="text-sm px-4 py-2 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500"
                            href="{{ route('admin.dashboard') }}">
                             Dashboard
@@ -54,10 +55,12 @@
 
                                 <div class="absolute right-0 mt-2 w-56 rounded-md bg-neutral-900 border border-white/10 shadow-lg overflow-hidden z-50 ring-1 ring-white/10">
                                     <a class="block px-4 py-2 text-sm hover:bg-neutral-800" href="{{ route('home') }}">Dashboard — Información</a>
+                                </div>
                                 <div class="absolute right-0 mt-2 w-48 rounded-md bg-neutral-900 border border-white/10 shadow-lg overflow-hidden">
                                     <a class="block px-4 py-2 text-sm hover:bg-neutral-800" href="{{ route('admin.dashboard') }}">
                                         Panel Admin
                                     </a>
+                                    <!-- Botón de Cerrar sesión con tamaño consistente -->
                                     <a class="block px-4 py-2 text-sm hover:bg-neutral-800"
                                        href="{{ route('logout') }}"
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -66,6 +69,7 @@
                                 </div>
                             </details>
 
+                            <!-- Formulario para cerrar sesión -->
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                 @csrf
                             </form>

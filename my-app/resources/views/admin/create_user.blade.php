@@ -8,23 +8,23 @@
         <form action="{{ route('admin.store_user') }}" method="POST">
             @csrf
             <div class="mb-4">
-                <label for="name" class="block text-sm font-semibold">Nombre</label>
-                <input type="text" name="name" id="name" class="w-full p-2 mt-2 border border-gray-300 rounded" required>
+                <label for="name" class="block text-sm font-semibold text-black">Nombre</label> <!-- Cambié text-white a text-black -->
+                <input type="text" name="name" id="name" class="w-full p-2 mt-2 border border-gray-300 rounded text-black" required> <!-- Cambié text-white a text-black -->
             </div>
 
             <div class="mb-4">
-                <label for="email" class="block text-sm font-semibold">Correo Electrónico</label>
-                <input type="email" name="email" id="email" class="w-full p-2 mt-2 border border-gray-300 rounded" required>
+                <label for="email" class="block text-sm font-semibold text-black">Correo Electrónico</label> <!-- Cambié text-white a text-black -->
+                <input type="email" name="email" id="email" class="w-full p-2 mt-2 border border-gray-300 rounded text-black" required> <!-- Cambié text-white a text-black -->
             </div>
 
             <div class="mb-4">
-                <label for="password" class="block text-sm font-semibold">Contraseña</label>
-                <input type="password" name="password" id="password" class="w-full p-2 mt-2 border border-gray-300 rounded" required>
+                <label for="password" class="block text-sm font-semibold text-black">Contraseña</label> <!-- Cambié text-white a text-black -->
+                <input type="password" name="password" id="password" class="w-full p-2 mt-2 border border-gray-300 rounded text-black" required> <!-- Cambié text-white a text-black -->
             </div>
 
             <div class="mb-4">
-                <label for="role" class="block text-sm font-semibold">Rol</label>
-                <select name="role" id="role" class="w-full p-2 mt-2 border border-gray-300 rounded" required>
+                <label for="role" class="block text-sm font-semibold text-black">Rol</label> <!-- Cambié text-white a text-black -->
+                <select name="role" id="role" class="w-full p-2 mt-2 border border-gray-300 rounded text-black" required> <!-- Cambié text-white a text-black -->
                     <option value="user">Usuario</option>
                     <option value="admin">Administrador</option>
                 </select>
