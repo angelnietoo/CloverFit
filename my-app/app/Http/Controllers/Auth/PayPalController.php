@@ -125,7 +125,7 @@ class PayPalController extends Controller
             return redirect('/')->with('error', 'Error al ejecutar el pago: ' . $e->getMessage());
         }
 
-        return redirect('/')->with('success', 'Pago realizado correctamente.');
+        return redirect()->route('suscripcion.success')->with('success', 'Pago realizado correctamente.');
     }
 
     // Cancelación del pago

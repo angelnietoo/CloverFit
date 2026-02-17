@@ -13887,6 +13887,359 @@
 [2026-02-16 22:44:05] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGJZ2ZQ9UM410018V448811C"} 
 [2026-02-16 22:44:05] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2V920227DD979282X"} 
 <<<<<<< HEAD
+[2026-02-17 16:08:00] local.INFO: PayPalController@pay called {"input":{"_token":"PkgjDkrxN0NnQuyNfVaQMllam4VYUExycWofSPU0","tipo_suscripcion":"fit"}} 
+[2026-02-17 16:08:04] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKJEFI73K76497E7856573H\",\"state\":\"created\",\"create_time\":\"2026-02-17T16:06:45Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKJEFI73K76497E7856573H\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-76Y04763LM474801D\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKJEFI73K76497E7856573H/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 16:08:04] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKJEFI73K76497E7856573H"} 
+[2026-02-17 16:08:04] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-76Y04763LM474801D"} 
+[2026-02-17 16:18:20] local.INFO: Usuario autenticado: FREDERIC  
+[2026-02-17 16:26:31] local.DEBUG: From: CloverFit <hello@example.com>
+To: frede2000@gmail.com
+Subject: Verify Email Address
+MIME-Version: 1.0
+Date: Tue, 17 Feb 2026 16:26:31 +0000
+Message-ID: <f60b735f80a349fe560d515d53cf9fb5@example.com>
+Content-Type: multipart/alternative; boundary=e0rm2oHl
+
+--e0rm2oHl
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+CloverFit: http://localhost:8000
+
+# Hello!
+
+Please click the button below to verify your email address.
+
+Verify Email Address: http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349183&signature=fe39da93ee2a49bfb8ca77837c47dfabe31ffb93099ecfe56e9e15f48d0defad
+
+If you did not create an account, no further action is required.
+
+Regards,
+CloverFit
+
+If you're having trouble clicking the "Verify Email Address" button, copy and paste the URL below
+into your web browser: [http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349183&signature=fe39da93ee2a49bfb8ca77837c47dfabe31ffb93099ecfe56e9e15f48d0defad](http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349183&signature=fe39da93ee2a49bfb8ca77837c47dfabe31ffb93099ecfe56e9e15f48d0defad)
+
+© 2026 CloverFit. All rights reserved.
+
+--e0rm2oHl
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>CloverFit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<style>
+@media only screen and (max-width: 600px) {
+.inner-body {
+width: 100% !important;
+}
+
+.footer {
+width: 100% !important;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.button {
+width: 100% !important;
+}
+}
+</style>
+
+</head>
+<body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; background-color: #ffffff; color: #52525b; height: 100%; line-height: 1.4; margin: 0; padding: 0; width: 100% !important;">
+
+<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td class="header" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 25px 0; text-align: center;">
+<a href="http://localhost:8000" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
+CloverFit
+</a>
+</td>
+</tr>
+
+<!-- Email Body -->
+<tr>
+<td class="body" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; border-bottom: 1px solid #fafafa; border-top: 1px solid #fafafa; margin: 0; padding: 0; width: 100%; border: hidden !important;">
+<table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; background-color: #ffffff; border-color: #e4e4e7; border-radius: 4px; border-width: 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); margin: 0 auto; padding: 0; width: 570px;">
+<!-- Body content -->
+<tr>
+<td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Hello!</h1>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Please click the button below to verify your email address.</p>
+<table class="action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%; float: unset;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<a href="http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349183&amp;signature=fe39da93ee2a49bfb8ca77837c47dfabe31ffb93099ecfe56e9e15f48d0defad" class="button button-primary" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: #18181b; border-bottom: 8px solid #18181b; border-left: 18px solid #18181b; border-right: 18px solid #18181b; border-top: 8px solid #18181b; word-break: break-all;">Verify Email Address</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">If you did not create an account, no further action is required.</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Regards,<br>
+CloverFit</p>
+
+
+<table class="subcopy" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; border-top: 1px solid #e4e4e7; margin-top: 25px; padding-top: 25px;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; text-align: left; font-size: 14px;">If you're having trouble clicking the "Verify Email Address" button, copy and paste the URL below
+into your web browser: <span class="break-all" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; word-break: break-all;"><a href="http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349183&amp;signature=fe39da93ee2a49bfb8ca77837c47dfabe31ffb93099ecfe56e9e15f48d0defad" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; word-break: break-all;">http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349183&amp;signature=fe39da93ee2a49bfb8ca77837c47dfabe31ffb93099ecfe56e9e15f48d0defad</a></span></p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
+<tr>
+<td class="content-cell" align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; color: #a1a1aa; font-size: 12px; text-align: center;">© 2026 CloverFit. All rights reserved.</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+--e0rm2oHl--
+  
+[2026-02-17 16:26:32] local.DEBUG: From: CloverFit <hello@example.com>
+To: frede2000@gmail.com
+Subject: Verify Email Address
+MIME-Version: 1.0
+Date: Tue, 17 Feb 2026 16:26:32 +0000
+Message-ID: <f7d69d294346f897a291c2a231694958@example.com>
+Content-Type: multipart/alternative; boundary=7ADorMeA
+
+--7ADorMeA
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+CloverFit: http://localhost:8000
+
+# Hello!
+
+Please click the button below to verify your email address.
+
+Verify Email Address: http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349192&signature=8e3d9d27331447107d48d2ae135ee1f0af7a35bdc973c49cdaad099b3f584b92
+
+If you did not create an account, no further action is required.
+
+Regards,
+CloverFit
+
+If you're having trouble clicking the "Verify Email Address" button, copy and paste the URL below
+into your web browser: [http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349192&signature=8e3d9d27331447107d48d2ae135ee1f0af7a35bdc973c49cdaad099b3f584b92](http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349192&signature=8e3d9d27331447107d48d2ae135ee1f0af7a35bdc973c49cdaad099b3f584b92)
+
+© 2026 CloverFit. All rights reserved.
+
+--7ADorMeA
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>CloverFit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<style>
+@media only screen and (max-width: 600px) {
+.inner-body {
+width: 100% !important;
+}
+
+.footer {
+width: 100% !important;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.button {
+width: 100% !important;
+}
+}
+</style>
+
+</head>
+<body style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; background-color: #ffffff; color: #52525b; height: 100%; line-height: 1.4; margin: 0; padding: 0; width: 100% !important;">
+
+<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 0; padding: 0; width: 100%;">
+<tr>
+<td class="header" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; padding: 25px 0; text-align: center;">
+<a href="http://localhost:8000" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 19px; font-weight: bold; text-decoration: none; display: inline-block;">
+CloverFit
+</a>
+</td>
+</tr>
+
+<!-- Email Body -->
+<tr>
+<td class="body" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; background-color: #fafafa; border-bottom: 1px solid #fafafa; border-top: 1px solid #fafafa; margin: 0; padding: 0; width: 100%; border: hidden !important;">
+<table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; background-color: #ffffff; border-color: #e4e4e7; border-radius: 4px; border-width: 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); margin: 0 auto; padding: 0; width: 570px;">
+<!-- Body content -->
+<tr>
+<td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Hello!</h1>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Please click the button below to verify your email address.</p>
+<table class="action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 100%; margin: 30px auto; padding: 0; text-align: center; width: 100%; float: unset;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<a href="http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349192&amp;signature=8e3d9d27331447107d48d2ae135ee1f0af7a35bdc973c49cdaad099b3f584b92" class="button button-primary" target="_blank" rel="noopener" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -webkit-text-size-adjust: none; border-radius: 4px; color: #fff; display: inline-block; overflow: hidden; text-decoration: none; background-color: #18181b; border-bottom: 8px solid #18181b; border-left: 18px solid #18181b; border-right: 18px solid #18181b; border-top: 8px solid #18181b; word-break: break-all;">Verify Email Address</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">If you did not create an account, no further action is required.</p>
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Regards,<br>
+CloverFit</p>
+
+
+<table class="subcopy" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; border-top: 1px solid #e4e4e7; margin-top: 25px; padding-top: 25px;">
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; text-align: left; font-size: 14px;">If you're having trouble clicking the "Verify Email Address" button, copy and paste the URL below
+into your web browser: <span class="break-all" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; word-break: break-all;"><a href="http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349192&amp;signature=8e3d9d27331447107d48d2ae135ee1f0af7a35bdc973c49cdaad099b3f584b92" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: #18181b; word-break: break-all;">http://127.0.0.1:8000/email/verify/3/127862c063c3c2dc0a33b2449f73b81f4383f215?expires=1771349192&amp;signature=8e3d9d27331447107d48d2ae135ee1f0af7a35bdc973c49cdaad099b3f584b92</a></span></p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative;">
+<table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; -premailer-cellpadding: 0; -premailer-cellspacing: 0; -premailer-width: 570px; margin: 0 auto; padding: 0; text-align: center; width: 570px;">
+<tr>
+<td class="content-cell" align="center" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
+<p style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; line-height: 1.5em; margin-top: 0; color: #a1a1aa; font-size: 12px; text-align: center;">© 2026 CloverFit. All rights reserved.</p>
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
+--7ADorMeA--
+  
+[2026-02-17 16:40:43] local.INFO: Usuario autenticado: FREDERIC  
+[2026-02-17 16:46:20] local.INFO: Usuario autenticado: FREDERIC  
+[2026-02-17 16:51:17] local.INFO: Usuario autenticado: FREDERIC  
+[2026-02-17 16:51:24] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"fit"}} 
+[2026-02-17 16:51:27] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKJYQA803314497E014331J\",\"state\":\"created\",\"create_time\":\"2026-02-17T16:50:08Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKJYQA803314497E014331J\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-9UF6049355807871T\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKJYQA803314497E014331J/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 16:51:27] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKJYQA803314497E014331J"} 
+[2026-02-17 16:51:27] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-9UF6049355807871T"} 
+[2026-02-17 17:55:00] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"fit"}} 
+[2026-02-17 17:55:03] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKKWKA5LA44199A78725215\",\"state\":\"created\",\"create_time\":\"2026-02-17T17:53:44Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKKWKA5LA44199A78725215\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-97K205053B8577042\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKKWKA5LA44199A78725215/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 17:55:03] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKKWKA5LA44199A78725215"} 
+[2026-02-17 17:55:03] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-97K205053B8577042"} 
+[2026-02-17 18:03:43] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"fit"}} 
+[2026-02-17 18:03:45] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKK2MQ8C836925AX9792609\",\"state\":\"created\",\"create_time\":\"2026-02-17T18:02:26Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKK2MQ8C836925AX9792609\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-61734424AB114054F\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKK2MQ8C836925AX9792609/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 18:03:45] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKK2MQ8C836925AX9792609"} 
+[2026-02-17 18:03:45] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-61734424AB114054F"} 
+[2026-02-17 18:36:31] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"pro"}} 
+[2026-02-17 18:36:33] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n pro\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKLJYQ4JP12677PP553834V\",\"state\":\"created\",\"create_time\":\"2026-02-17T18:35:14Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLJYQ4JP12677PP553834V\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-75S409354W2945116\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLJYQ4JP12677PP553834V/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 18:36:33] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLJYQ4JP12677PP553834V"} 
+[2026-02-17 18:36:33] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-75S409354W2945116"} 
+[2026-02-17 18:40:06] local.ERROR: Command "db:sed" is not defined.
+
+Did you mean one of these?
+    db
+    db:monitor
+    db:seed
+    db:show
+    db:table
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:sed\" is not defined.
+
+Did you mean one of these?
+    db
+    db:monitor
+    db:seed
+    db:show
+    db:table
+    db:wipe at C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/symfony/console/Application.php:759)
+[stacktrace]
+#0 C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find()
+#1 C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun()
+#2 C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run()
+#3 C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle()
+#4 C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/artisan(17): Illuminate/Foundation/Application->handleCommand()
+#5 {main}
+"} 
+[2026-02-17 18:44:01] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"fit"}} 
+[2026-02-17 18:44:03] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKLNJA5YT94295HH895590R\",\"state\":\"created\",\"create_time\":\"2026-02-17T18:42:44Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLNJA5YT94295HH895590R\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-1FG0760272712303G\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLNJA5YT94295HH895590R/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 18:44:03] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLNJA5YT94295HH895590R"} 
+[2026-02-17 18:44:03] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-1FG0760272712303G"} 
+[2026-02-17 18:44:40] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"elite"}} 
+[2026-02-17 18:44:42] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n elite\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKLNSY3X216672A73530520\",\"state\":\"created\",\"create_time\":\"2026-02-17T18:43:23Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLNSY3X216672A73530520\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-0JM76231V20530540\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLNSY3X216672A73530520/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 18:44:42] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLNSY3X216672A73530520"} 
+[2026-02-17 18:44:42] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-0JM76231V20530540"} 
+[2026-02-17 19:04:18] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"fit"}} 
+[2026-02-17 19:04:20] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKLWZI8MJ08158FP894572P\",\"state\":\"created\",\"create_time\":\"2026-02-17T19:03:01Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLWZI8MJ08158FP894572P\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-0SB35881E9047402T\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLWZI8MJ08158FP894572P/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 19:04:20] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKLWZI8MJ08158FP894572P"} 
+[2026-02-17 19:04:20] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-0SB35881E9047402T"} 
+[2026-02-17 19:24:57] local.INFO: PayPalController@pay called {"input":{"_token":"KcF50ULotXecW3sbrZgaTGVEP4YOVKCdRWd1Hu1I","tipo_suscripcion":"fit"}} 
+[2026-02-17 19:25:00] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGKMAPI7E892422UY869851H\",\"state\":\"created\",\"create_time\":\"2026-02-17T19:23:41Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKMAPI7E892422UY869851H\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-39H19940MU852591U\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKMAPI7E892422UY869851H/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
+[2026-02-17 19:25:00] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGKMAPI7E892422UY869851H"} 
+[2026-02-17 19:25:00] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-39H19940MU852591U"} 
+=======
+<<<<<<< HEAD
 >>>>>>> 577d627cddff3ec29708a751f8be40bb1ff5aed7
 =======
 >>>>>>> 577d627cddff3ec29708a751f8be40bb1ff5aed7
@@ -14191,6 +14544,9 @@
 #41 C:/Users/robox/Documents/GitHub/CloverFit/my-app/artisan(17): Illuminate/Foundation/Application->handleCommand()
 #42 {main}
 "} 
+<<<<<<< HEAD
+>>>>>>> c033ea52ac7b59ee4cc021aad4a3fa51f69a6836
+=======
 [2026-02-17 19:35:34] local.INFO: Usuario autenticado: Angel  
 [2026-02-17 19:53:12] local.ERROR: View [admin.edit_user] not found. {"userId":1,"exception":"[object] (InvalidArgumentException(code: 0): View [admin.edit_user] not found. at C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/View/FileViewFinder.php:138)
 [stacktrace]
@@ -14320,6 +14676,7 @@
 #59 C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('...')
 #60 {main}
 "} 
+<<<<<<< HEAD
 [2026-02-17 20:09:18] local.ERROR: include(C:\Users\robox\Documents\GitHub\CloverFit\my-app\vendor\composer/../paypal/rest-api-sdk-php/lib/PayPal/Rest/ApiContext.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(C:\\Users\\robox\\Documents\\GitHub\\CloverFit\\my-app\\vendor\\composer/../paypal/rest-api-sdk-php/lib/PayPal/Rest/ApiContext.php): Failed to open stream: No such file or directory at C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/composer/ClassLoader.php:576)
 [stacktrace]
 #0 C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError()
@@ -14368,3 +14725,6 @@
 #43 C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('...')
 #44 {main}
 "} 
+=======
+>>>>>>> c39b51a0d5603e66135f48cd9018c67845d36bfb
+>>>>>>> fa014e789a534c55bfaf9e41d5bea6dd81eeaf04
