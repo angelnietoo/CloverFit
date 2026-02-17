@@ -33,10 +33,18 @@
             Regístrate
           </a>
         @else
-          <a href="{{ route('dashboard') }}"
-             class="inline-block px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
-            Panel
-          </a>
+          <div class="flex items-center gap-4">
+            <div class="text-sm">
+              <p class="text-neutral-200">¡Bienvenido!</p>
+              <p class="text-red-500 font-semibold">{{ Auth::user()->name }}</p>
+            </div>
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+              @csrf
+              <button type="submit" class="px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
+                Cerrar sesión
+              </button>
+            </form>
+          </div>
         @endguest
       </div>
     </div>
@@ -44,7 +52,7 @@
 
   <!-- IMAGE BELOW HEADER -->
   <div class="w-full relative overflow-hidden" style="height: 650px;">
-    <img src="{{ asset('imagenes/gimnasio.jpg') }}"
+    <img src="{{ asset('imagenes/cloverfit.jpg') }}"
          alt="Gimnasio"
          class="w-full h-full object-cover object-top" />
 
@@ -85,7 +93,7 @@
 
       <div class="relative">
         <div class="rounded-2xl p-4 border border-white/10 bg-neutral-900 shadow-lg">
-          <img src="{{ asset('imagenes/gimnasio.jpg') }}" alt="gimnasio"
+          <img src="{{ asset('imagenes/cloverfit2.jpg') }}" alt="gimnasio"
                class="rounded-xl w-full h-80 object-cover" />
         </div>
 
@@ -106,7 +114,7 @@
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
-          <h3 class="text-xl font-semibold">Básica</h3>
+          <h3 class="text-xl font-semibold">FIT</h3>
 
           <!-- PRECIO ARRIBA -->
           <p class="text-3xl font-extrabold mt-3 text-red-400">
@@ -130,11 +138,11 @@
             Más popular
           </div>
 
-          <h3 class="text-xl font-semibold mt-3">Premium</h3>
+          <h3 class="text-xl font-semibold mt-3">PRO</h3>
 
           <!-- PRECIO ARRIBA -->
           <p class="text-3xl font-extrabold mt-3 text-red-400">
-            €34.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+            €24.99<span class="text-base text-neutral-300 font-medium">/mes</span>
           </p>
           <p class="text-xs text-green-400 mt-1">
             Primer mes: <span class="font-bold">€9,99</span>
@@ -150,11 +158,11 @@
         </div>
 
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
-          <h3 class="text-xl font-semibold">VIP</h3>
+          <h3 class="text-xl font-semibold">ELITE</h3>
 
           <!-- PRECIO ARRIBA -->
           <p class="text-3xl font-extrabold mt-3 text-red-400">
-            €45.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+            €35.99<span class="text-base text-neutral-300 font-medium">/mes</span>
           </p>
           <p class="text-xs text-green-400 mt-1">
             Primer mes: <span class="font-bold">€9,99</span>
@@ -297,5 +305,29 @@
     </footer>
 
   </main>
+ <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
+<section class="mt-16 flex justify-center items-center space-x-8">
+  <div class="w-1/2">
+    <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
+    <p class="mt-4 text-neutral-300">
+      Dirección:<br>
+      Calle Ave del Paraíso, nº6, El Puerto de Santa María, 11500, Cádiz
+    </p>
+    <p class="mt-4 text-neutral-300">
+      Horario:<br>
+      Lunes a Viernes: 08:00 a 21:00
+    </p>
+  </div>
+
+  <!-- Mapa pequeño -->
+  <div class="w-1/2 h-40"> <!-- Cambié el valor de h-60 a h-40 -->
+    <x-maps-leaflet 
+      :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
+      :zoomLevel="15" 
+      :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
+    />
+  </div>
+</section>
+
 </body>
 </html>
