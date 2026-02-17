@@ -4,7 +4,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ContactController; // Agregado
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntityNameController; //ruta del crud de la entidad
-use App\Http\Controllers\EntityNameController;
+
 
 
 Route::get('/', [TaskController::class, 'index'])->name('index');
