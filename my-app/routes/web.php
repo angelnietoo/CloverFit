@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntityNameController; // Controlador para las entidades
 use App\Http\Controllers\Auth\PayPalController;
+use App\Http\Controllers\Admin\UserController; // Importar UserController para gestión de usuarios
 
 // Ruta principal
 Route::get('/', [TaskController::class, 'index'])->name('index');
@@ -37,3 +38,20 @@ Route::resource('entities', EntityNameController::class);
 Route::get('entities/trashed', [EntityNameController::class, 'trashed'])->name('entities.trashed'); // Mostrar entidades eliminadas
 Route::post('entities/{id}/restore', [EntityNameController::class, 'restore'])->name('entities.restore'); // Restaurar entidad eliminada
 Route::delete('entities/{id}', [EntityNameController::class, 'destroy'])->name('entities.destroy'); // Eliminar entidad
+
+// Rutas para la gestión de usuarios solo accesibles por administradores
+Route::middleware(['role:admin'])->group(function () {
+    // Ruta para ver todos los usuarios
+    Route::get('/admin', [UserController::class, 'index'])->name('admin.dashboard');
+    
+    // Ruta para crear un nuevo usuario
+    Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.create_user');
+    Route::post('/admin/users', [UserController::class, 'store'])->name('admin.store_user');
+    
+    // Rutas para editar un usuario
+    Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('admin.edit_user');
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.update_user');
+    
+    // Ruta para eliminar un usuario
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.destroy_user');
+});
