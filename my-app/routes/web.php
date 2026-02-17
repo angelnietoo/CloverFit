@@ -38,3 +38,9 @@ Route::resource('entities', EntityNameController::class);
 Route::get('entities/trashed', [EntityNameController::class, 'trashed'])->name('entities.trashed'); // Mostrar entidades eliminadas
 Route::post('entities/{id}/restore', [EntityNameController::class, 'restore'])->name('entities.restore'); // Restaurar entidad eliminada
 Route::delete('entities/{id}', [EntityNameController::class, 'destroy'])->name('entities.destroy'); // Eliminar entidad
+
+use App\Http\Controllers\RecordController;
+
+// Rutas para crear y eliminar registros Telegram
+Route::post('/records', [RecordController::class, 'store']);
+Route::delete('/records/{id}', [RecordController::class, 'destroy']);
