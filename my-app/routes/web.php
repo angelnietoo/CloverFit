@@ -10,7 +10,8 @@ use App\Http\Controllers\Auth\PayPalController;
 Route::get('/', [TaskController::class, 'index'])->name('index');
 
 // Rutas de autenticación (login, registro, restablecimiento de contraseña, etc.)
-Auth::routes();
+// Habilitar rutas de verificación por email
+Auth::routes(['verify' => true]);
 
 // Ruta para el formulario de contacto
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
@@ -30,6 +31,10 @@ Route::get('/suscripcion/pago/cancel', [PayPalController::class, 'cancel'])->nam
 // Ruta de inicio después del login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Perfil: editar y actualizar
+Route::get('/profile/edit', [App\Http\Controllers\HomeController::class, 'editProfile'])->name('profile.edit')->middleware('auth');
+Route::put('/profile', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
+
 // Rutas del recurso para las entidades
 Route::resource('entities', EntityNameController::class);
 
@@ -37,3 +42,8 @@ Route::resource('entities', EntityNameController::class);
 Route::get('entities/trashed', [EntityNameController::class, 'trashed'])->name('entities.trashed'); // Mostrar entidades eliminadas
 Route::post('entities/{id}/restore', [EntityNameController::class, 'restore'])->name('entities.restore'); // Restaurar entidad eliminada
 Route::delete('entities/{id}', [EntityNameController::class, 'destroy'])->name('entities.destroy'); // Eliminar entidad
+
+// Ruta para mostrar el mensaje de pago exitoso
+Route::get('/suscripcion/pago/exito', function () {
+    return view('profile.suscripcion.exito');
+})->name('suscripcion.success');
