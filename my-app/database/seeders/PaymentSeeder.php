@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\activities;
+use App\Models\Payment;
 use App\Models\members;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ActivitiesSeeder extends Seeder
+class PaymentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,10 +20,10 @@ class ActivitiesSeeder extends Seeder
             $members = members::all();
         }
 
-        // Crear 100 actividades
+        // Crear 3-5 pagos por miembro
         $members->each(function($member) {
-            activities::factory()
-                ->count(2)
+            Payment::factory()
+                ->count(rand(3, 5))
                 ->create(['member_id' => $member->id]);
         });
     }

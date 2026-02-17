@@ -15,10 +15,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear 10 usuarios con el rol 'user'
-        User::factory(10)->create()->each(function ($user) {
-            $user->role = 'user'; // Asignar el rol 'user' a cada usuario
-            $user->save();
-        });
+        // Crear usuarios de prueba
+        User::factory(10)->create();
+        
+        User::factory()->create([
+            'name' => 'Admin CloverFit',
+            'email' => 'admin@cloverfit.com',
+            'role' => 'admin',
+        ]);
+
+        // Ejecutar seeders en orden
+        $this->call([
+            TrainerSeeder::class,
+            MembershipSeeder::class,
+            ClassesSeeder::class,
+            ClassScheduleSeeder::class,
+            MembersSeeder::class,
+            ActivitiesSeeder::class,
+            PaymentSeeder::class,
+            ReviewSeeder::class,
+        ]);
     }
 }

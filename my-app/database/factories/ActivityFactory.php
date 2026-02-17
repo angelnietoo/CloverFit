@@ -2,22 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\activities;
+use App\Models\Activity;
 use App\Models\members;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\activities>
- */
-class ActivitiesFactory extends Factory
+class ActivityFactory extends Factory
 {
-    protected $model = activities::class;
+    protected $model = Activity::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         $types = ['Clase', 'Entrenamiento Personal', 'Evento'];
