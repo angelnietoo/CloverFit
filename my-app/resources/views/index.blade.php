@@ -1,74 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CloverFit — Tu gimnasio, tu ritmo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="CloverFit - gimnasio local: clases, entrenadores, membresías y más." />
-</head>
+@extends('layouts.app')
 
-<body class="antialiased bg-neutral-950 text-white">
+@section('content')
 
-  <!-- NAV -->
-  <header class="bg-neutral-950/90 backdrop-blur border-b border-white/10">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="{{ url('/') }}" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-red-600 rounded-md flex items-center justify-center text-white font-extrabold">CF</div>
-        <span class="font-semibold text-lg tracking-wide">CloverFit</span>
-      </a>
+  <!-- HERO a ancho completo con imagen de fondo -->
+  <section class="relative w-full h-[60vh] md:h-[70vh]">
+    <img src="{{ asset('imagenes/cloverfit.jpg') }}" alt="CloverFit Hero"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+  </section>
 
-      <nav class="hidden md:flex gap-6 items-center text-sm text-neutral-200">
-        <a href="#clases" class="hover:text-red-500 transition">Clases</a>
-        <a href="#entrenadores" class="hover:text-red-500 transition">Entrenadores</a>
-        <a href="#membresias" class="hover:text-red-500 transition">Membresías</a>
-        <a href="#contacto" class="hover:text-red-500 transition">Contacto</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        @guest
-          <a href="{{ route('login') }}" class="text-sm text-neutral-200 hover:text-red-500 transition">Iniciar sesión</a>
-          <a href="{{ route('register') }}"
-             class="ml-2 inline-block px-4 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition">
-            Regístrate
-          </a>
-        @else
-          @if (isset(Auth::user()->role) && Auth::user()->role === 'admin')
-            <a href="{{ route('admin.dashboard') }}"
-               class="inline-block px-4 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition">
-              Dashboard
-            </a>
-          @endif
-          <div class="flex items-center gap-4">
-            <div class="text-sm">
-              <p class="text-neutral-200">¡Bienvenido!</p>
-              <p class="text-red-500 font-semibold">{{ Auth::user()->name }}</p>
-            </div>
-            <form method="POST" action="{{ route('logout') }}" class="inline">
-              @csrf
-              <button type="submit" class="px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
-                Cerrar sesión
-              </button>
-            </form>
-          </div>
-        @endguest
-      </div>
-    </div>
-  </header>
-
-  <!-- IMAGE BELOW HEADER -->
-  <div class="w-full relative overflow-hidden" style="height: 650px;">
-    <img src="{{ asset('imagenes/cloverfit.jpg') }}"
-         alt="Gimnasio"
-         class="w-full h-full object-cover object-top" />
-
-    <!-- overlay suave para que el texto luego combine mejor -->
-    <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/10 via-neutral-950/15 to-neutral-950/75"></div>
-  </div>
-
-  <!-- HERO -->
+  
   <main class="container mx-auto px-6 py-12">
 
+    <!-- HERO de texto + imagen lateral -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
@@ -299,19 +243,7 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="mt-16 text-sm text-neutral-400">
-      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>© {{ date('Y') }} CloverFit. Todos los derechos reservados.</div>
-        <div class="flex gap-4">
-          <a href="#" class="hover:text-red-400 transition">Términos</a>
-          <a href="#" class="hover:text-red-400 transition">Privacidad</a>
-        </div>
-      </div>
-    </footer>
-
-  </main>
- <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
+    <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
 <section class="mt-16 flex justify-center items-center space-x-8">
   <div class="w-1/2">
     <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
@@ -325,8 +257,8 @@
     </p>
   </div>
 
-  <!-- Mapa pequeño -->
-  <div class="w-1/2 h-40"> <!-- Cambié el valor de h-60 a h-40 -->
+  <!-- Mapa muy pequeño -->
+  <div class="w-1/2 h-16"> <!-- Reduje la altura a h-16 para hacerlo muy pequeño -->
     <x-maps-leaflet 
       :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
       :zoomLevel="15" 
@@ -335,5 +267,16 @@
   </div>
 </section>
 
-</body>
-</html>
+    <!-- FOOTER -->
+    <footer class="mt-16 text-sm text-neutral-400">
+      <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>© {{ date('Y') }} CloverFit. Todos los derechos reservados.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-red-400 transition">Términos</a>
+          <a href="#" class="hover:text-red-400 transition">Privacidad</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+@endsection
