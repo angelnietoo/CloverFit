@@ -12018,6 +12018,7 @@
 [2026-02-16 19:51:57] local.INFO: Usuario autenticado: Héctor Ramos Fernández  
 [2026-02-16 19:54:35] local.INFO: Usuario autenticado: Héctor Ramos Fernández  
 <<<<<<< HEAD
+<<<<<<< HEAD
 [2026-02-16 21:20:31] local.ERROR: include(C:\Users\robox\Documents\GitHub\CloverFit\my-app\vendor\composer/../larswiegers/laravel-maps/src/LaravelMapsServiceProvider.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(C:\\Users\\robox\\Documents\\GitHub\\CloverFit\\my-app\\vendor\\composer/../larswiegers/laravel-maps/src/LaravelMapsServiceProvider.php): Failed to open stream: No such file or directory at C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/composer/ClassLoader.php:576)
 [stacktrace]
 #0 C:/Users/robox/Documents/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError()
@@ -12650,6 +12651,8 @@
 #71 {main}
 "} 
 =======
+=======
+>>>>>>> 577d627cddff3ec29708a751f8be40bb1ff5aed7
 [2026-02-16 21:08:16] local.ERROR: include(C:\Users\pcnue\OneDrive\Documentos\GitHub\CloverFit\my-app\vendor\composer/../larswiegers/laravel-maps/src/LaravelMapsServiceProvider.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(C:\\Users\\pcnue\\OneDrive\\Documentos\\GitHub\\CloverFit\\my-app\\vendor\\composer/../larswiegers/laravel-maps/src/LaravelMapsServiceProvider.php): Failed to open stream: No such file or directory at C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/composer/ClassLoader.php:576)
 [stacktrace]
 #0 C:/Users/pcnue/OneDrive/Documentos/GitHub/CloverFit/my-app/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate/Foundation/Bootstrap/HandleExceptions->handleError()
@@ -13883,4 +13886,7 @@
 [2026-02-16 22:44:05] local.INFO: PayPal payment created {"payment":"{\"intent\":\"sale\",\"payer\":{\"payment_method\":\"paypal\"},\"redirect_urls\":{\"return_url\":\"http://127.0.0.1:8000/suscripcion/pago/execute\",\"cancel_url\":\"http://127.0.0.1:8000/suscripcion/pago/cancel\"},\"transactions\":[{\"amount\":{\"total\":\"9.99\",\"currency\":\"EUR\"},\"description\":\"Pago de suscripci\\u00f3n CloverFit\",\"item_list\":{\"items\":[{\"name\":\"Suscripci\\u00f3n fit\",\"price\":\"9.99\",\"currency\":\"EUR\",\"quantity\":1}]},\"related_resources\":[]}],\"id\":\"PAYID-NGJZ2ZQ9UM410018V448811C\",\"state\":\"created\",\"create_time\":\"2026-02-16T22:42:46Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGJZ2ZQ9UM410018V448811C\",\"rel\":\"self\",\"method\":\"GET\"},{\"href\":\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2V920227DD979282X\",\"rel\":\"approval_url\",\"method\":\"REDIRECT\"},{\"href\":\"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGJZ2ZQ9UM410018V448811C/execute\",\"rel\":\"execute\",\"method\":\"POST\"}]}"} 
 [2026-02-16 22:44:05] local.INFO: PayPal link {"rel":"self","href":"https://api.sandbox.paypal.com/v1/payments/payment/PAYID-NGJZ2ZQ9UM410018V448811C"} 
 [2026-02-16 22:44:05] local.INFO: PayPal link {"rel":"approval_url","href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2V920227DD979282X"} 
+<<<<<<< HEAD
+>>>>>>> 577d627cddff3ec29708a751f8be40bb1ff5aed7
+=======
 >>>>>>> 577d627cddff3ec29708a751f8be40bb1ff5aed7
