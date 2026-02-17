@@ -40,6 +40,10 @@
                             </a>
                         @endif
                     @else
+                        <a class="text-sm px-4 py-2 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500"
+                           href="{{ route('admin.dashboard') }}">
+                            Dashboard
+                        </a>
                         <div class="relative">
                             <details class="group">
                                 <summary class="cursor-pointer list-none flex items-center gap-2 text-sm text-neutral-300 hover:text-red-400">
@@ -48,6 +52,9 @@
                                 </summary>
 
                                 <div class="absolute right-0 mt-2 w-48 rounded-md bg-neutral-900 border border-white/10 shadow-lg overflow-hidden">
+                                    <a class="block px-4 py-2 text-sm hover:bg-neutral-800" href="{{ route('admin.dashboard') }}">
+                                        Panel Admin
+                                    </a>
                                     <a class="block px-4 py-2 text-sm hover:bg-neutral-800"
                                        href="{{ route('logout') }}"
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
