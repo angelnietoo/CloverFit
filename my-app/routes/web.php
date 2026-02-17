@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntityNameController; // Controlador para las entidades
 use App\Http\Controllers\Auth\PayPalController;
+use App\Http\Controllers\Admin\UserController; // Importar UserController para gestión de usuarios
 
 // Ruta principal
 Route::get('/', [TaskController::class, 'index'])->name('index');
@@ -47,3 +48,19 @@ Route::delete('entities/{id}', [EntityNameController::class, 'destroy'])->name('
 Route::get('/suscripcion/pago/exito', function () {
     return view('profile.suscripcion.exito');
 })->name('suscripcion.success');
+// Rutas para la gestión de usuarios solo accesibles por administradores
+Route::middleware(['role:admin'])->group(function () {
+    // Ruta para ver todos los usuarios
+    Route::get('/admin', [UserController::class, 'index'])->name('admin.dashboard');
+    
+    // Ruta para crear un nuevo usuario
+    Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.create_user');
+    Route::post('/admin/users', [UserController::class, 'store'])->name('admin.store_user');
+    
+    // Rutas para editar un usuario
+    Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('admin.edit_user');
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.update_user');
+    
+    // Ruta para eliminar un usuario
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.destroy_user');
+});
