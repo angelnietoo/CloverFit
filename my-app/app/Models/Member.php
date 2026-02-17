@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class members extends Model
+class Member extends Model
 {
-    /** @use HasFactory<\Database\Factories\MembersFactory> */
     use HasFactory, SoftDeletes;
 
     protected $fillable = [

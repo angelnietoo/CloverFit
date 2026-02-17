@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntityNameController; // Controlador para las entidades
 use App\Http\Controllers\Auth\PayPalController;
 use App\Http\Controllers\Admin\UserController; // Importar UserController para gestión de usuarios
+use App\Http\Controllers\ClassesController; // Importar ClassesController
 
 // Ruta principal
 Route::get('/', [TaskController::class, 'index'])->name('index');
@@ -35,6 +36,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Perfil: editar y actualizar
 Route::get('/profile/edit', [App\Http\Controllers\HomeController::class, 'editProfile'])->name('profile.edit')->middleware('auth');
 Route::put('/profile', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('profile.update')->middleware('auth');
+
+// Rutas del recurso para las clases (CRUD Principal)
+Route::resource('classes', ClassesController::class);
+
+// Rutas adicionales para las clases
+Route::get('classes/trashed', [ClassesController::class, 'trashed'])->name('classes.trashed'); // Mostrar clases eliminadas
+Route::post('classes/{id}/restore', [ClassesController::class, 'restore'])->name('classes.restore'); // Restaurar clase eliminada
+Route::delete('classes/{id}/force', [ClassesController::class, 'forceDestroy'])->name('classes.force-destroy'); // Eliminar permanentemente
 
 // Rutas del recurso para las entidades
 Route::resource('entities', EntityNameController::class);

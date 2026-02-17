@@ -15,11 +15,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Crear usuarios de prueba
+        User::factory(10)->create();
+        
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin CloverFit',
+            'email' => 'admin@cloverfit.com',
+            'role' => 'admin',
+        ]);
+
+        // Ejecutar seeders en orden
+        $this->call([
+            TrainerSeeder::class,
+            MembershipSeeder::class,
+            ClassesSeeder::class,
+            ClassScheduleSeeder::class,
+            MembersSeeder::class,
+            ActivitiesSeeder::class,
+            PaymentSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }

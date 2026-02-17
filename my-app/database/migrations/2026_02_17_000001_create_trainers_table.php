@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('trainers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
-            $table->foreignId('membership_id')->nullable()->constrained('memberships')->onDelete('set null');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->nullable();
-            $table->text('notes')->nullable();
-            $table->date('membership_start_date')->nullable();
-            $table->date('membership_end_date')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('specialization'); // ej: "Cardio", "Musculación"
+            $table->decimal('hourly_rate', 8, 2); // Tarifa por hora
+            $table->string('image')->nullable(); // Foto del entrenador
             $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->softDeletes();
@@ -32,7 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('trainers');
     }
 };
-

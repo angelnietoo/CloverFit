@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class activities extends Model
+class Activity extends Model
 {
-    /** @use HasFactory<\Database\Factories\ActivitiesFactory> */
     use HasFactory, SoftDeletes;
 
     protected $table = 'activities';
@@ -29,6 +28,6 @@ class activities extends Model
     // Relación n:1 - Muchas actividades pertenecen a un miembro
     public function member()
     {
-        return $this->belongsTo(members::class, 'member_id');
+        return $this->belongsTo(Member::class);
     }
 }
