@@ -664,6 +664,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'paypal/rest-api-sdk-php' => array(
+            'pretty_version' => 'v1.6.4',
+            'version' => '1.6.4.0',
+            'reference' => '06837d290c4906578cfd92786412dff330a1429c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paypal/rest-api-sdk-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.4',
             'version' => '2.0.4.0',

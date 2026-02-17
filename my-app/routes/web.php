@@ -4,6 +4,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntityNameController; // Controlador para las entidades
+use App\Http\Controllers\Auth\PayPalController;
 
 // Ruta principal
 Route::get('/', [TaskController::class, 'index'])->name('index');
@@ -19,11 +20,12 @@ Route::get('/suscripcion', function () {
     return view('suscripcion');
 })->name('suscripcion.seleccionar');
 
-// Ruta para procesar el pago de suscripción
-Route::post('/suscripcion/pagar', function () {
-    // Aquí iría la lógica de pago
-    return redirect('/')->with('success', 'Suscripción procesada correctamente');
-})->name('suscripcion.pagar');
+// Ruta para procesar el pago de suscripción (PayPal)
+Route::post('/suscripcion/pagar', [PayPalController::class, 'pay'])->name('suscripcion.pagar');
+
+// Callbacks de PayPal
+Route::get('/suscripcion/pago/execute', [PayPalController::class, 'execute'])->name('suscripcion.execute');
+Route::get('/suscripcion/pago/cancel', [PayPalController::class, 'cancel'])->name('suscripcion.cancel');
 
 // Ruta de inicio después del login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
