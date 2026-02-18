@@ -25,6 +25,13 @@
                     <span class="font-semibold text-lg">{{ config('app.name', 'CloverFit') }}</span>
                 </a>
 
+                <div class="flex items-center gap-6">
+                    <a href="{{ route('index') }}" class="text-sm text-neutral-300 hover:text-red-400">Inicio</a>
+                    <a href="{{ route('index') }}#entrenadores" class="text-sm text-neutral-300 hover:text-red-400">Entrenadores</a>
+                    <a href="{{ route('index') }}#membresias" class="text-sm text-neutral-300 hover:text-red-400">Membresía</a>
+                    <a href="{{ route('index') }}#contacto" class="text-sm text-neutral-300 hover:text-red-400">Contáctanos</a>
+                </div>
+
                 <div class="flex items-center gap-4">
                     @guest
                         @if (Route::has('login'))
