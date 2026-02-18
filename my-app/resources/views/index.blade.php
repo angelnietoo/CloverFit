@@ -1,68 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CloverFit — Tu gimnasio, tu ritmo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="CloverFit - gimnasio local: clases, entrenadores, membresías y más." />
-</head>
+@extends('layouts.app')
 
-<body class="antialiased bg-neutral-950 text-white">
+@section('content')
 
-  <!-- NAV -->
-  <header class="bg-neutral-950/90 backdrop-blur border-b border-white/10">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="{{ url('/') }}" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-red-600 rounded-md flex items-center justify-center text-white font-extrabold">CF</div>
-        <span class="font-semibold text-lg tracking-wide">CloverFit</span>
-      </a>
+  <!-- HERO a ancho completo con imagen de fondo -->
+  <section class="relative w-full h-[60vh] md:h-[70vh]">
+    <img src="{{ asset('imagenes/cloverfit.jpg') }}" alt="CloverFit Hero"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+  </section>
 
-      <nav class="hidden md:flex gap-6 items-center text-sm text-neutral-200">
-        <a href="#clases" class="hover:text-red-500 transition">Clases</a>
-        <a href="#entrenadores" class="hover:text-red-500 transition">Entrenadores</a>
-        <a href="#membresias" class="hover:text-red-500 transition">Membresías</a>
-        <a href="#contacto" class="hover:text-red-500 transition">Contacto</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        @guest
-          <a href="{{ route('login') }}" class="text-sm text-neutral-200 hover:text-red-500 transition">Iniciar sesión</a>
-          <a href="{{ route('register') }} "
-             class="ml-2 inline-block px-4 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition">
-            Regístrate
-          </a>
-        @else
-          <div class="flex items-center gap-4">
-            <div class="text-sm">
-              <p class="text-neutral-200">¡Bienvenido!</p>
-              <p class="text-red-500 font-semibold">{{ Auth::user()->name }}</p>
-            </div>
-            <form method="POST" action="{{ route('logout') }}" class="inline">
-              @csrf
-              <button type="submit" class="px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
-                Cerrar sesión
-              </button>
-            </form>
-          </div>
-        @endguest
-      </div>
-    </div>
-  </header>
-
-  <!-- IMAGE BELOW HEADER -->
-  <div class="w-full relative overflow-hidden" style="height: 650px;">
-    <img src="{{ asset('imagenes/cloverfit.jpg') }}"
-         alt="Gimnasio"
-         class="w-full h-full object-cover object-top" />
-
-    <!-- overlay suave para que el texto luego combine mejor -->
-    <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/10 via-neutral-950/15 to-neutral-950/75"></div>
-  </div>
-
-  <!-- HERO -->
+  
   <main class="container mx-auto px-6 py-12">
 
+    <!-- HERO de texto + imagen lateral -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
@@ -293,6 +243,30 @@
       </div>
     </section>
 
+    <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
+<section class="mt-16 flex justify-center items-center space-x-8">
+  <div class="w-1/2">
+    <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
+    <p class="mt-4 text-neutral-300">
+      Dirección:<br>
+      Calle Ejemplo 123, Ciudad — 28000
+    </p>
+    <p class="mt-4 text-neutral-300">
+      Horario:<br>
+      Lun - Vie: 06:00 - 22:00 · Sáb: 08:00 - 14:00
+    </p>
+  </div>
+
+  <!-- Mapa muy pequeño -->
+  <div class="w-1/2 h-16"> <!-- Reduje la altura a h-16 para hacerlo muy pequeño -->
+    <x-maps-leaflet 
+      :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
+      :zoomLevel="15" 
+      :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
+    />
+  </div>
+</section>
+
     <!-- FOOTER -->
     <footer class="mt-16 text-sm text-neutral-400">
       <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -305,72 +279,4 @@
     </footer>
 
   </main>
- <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
-<section class="mt-16 container mx-auto px-6">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-    <!-- Contenido a la izquierda -->
-    <div class="lg:col-span-1">
-      <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
-      <p class="mt-4 text-neutral-300">
-        <span class="text-red-400 font-semibold">Dirección:</span><br>
-        Calle Ave del Paraíso, nº6<br>
-        El Puerto de Santa María, 11500<br>
-        Cádiz
-      </p>
-      <p class="mt-6 text-neutral-300">
-        <span class="text-red-400 font-semibold">Horario:</span><br>
-        Lunes a Viernes: 08:00 a 21:00<br>
-        Sábados: Por consulta
-      </p>
-      <p class="mt-6 text-neutral-300">
-        <span class="text-red-400 font-semibold">Teléfono:</span><br>
-        +34 600 000 000
-      </p>
-    </div>
-
-    <!-- Mapa a la derecha (ocupa 2 columnas) -->
-    <div class="lg:col-span-2 h-full">
-      <x-maps-leaflet 
-        :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
-        :zoomLevel="15" 
-        :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
-      />
-    </div>
-  </div>
-</section>
-
-<!-- Sección de Telegram - Botón para contactar directamente con el bot -->
-<section id="telegram" class="mt-16 py-12 bg-gradient-to-r from-blue-900/20 to-blue-800/20 border-t border-blue-500/30">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-8">
-      <h2 class="text-3xl font-extrabold text-white">📱 Contacta con nosotros en Telegram</h2>
-      <p class="mt-2 text-neutral-300">Soporte inmediato - Respuestas en tiempo real</p>
-    </div>
-    
-    <div class="flex justify-center">
-      <div class="max-w-md w-full">
-        @php
-          $botUsername = env('TELEGRAM_BOT_USERNAME', 'cloverfit_bot');
-        @endphp
-        
-        <!-- Botón para abrir chat con el bot -->
-        <a href="https://t.me/{{ $botUsername }}"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="flex items-center justify-center gap-3 w-full px-8 py-5 rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-bold text-xl hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 transition shadow-xl hover:shadow-blue-500/40 transform hover:scale-105">
-          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.461c.54-.203 1.01.122.84.953z"/>
-          </svg>
-          Abrir Telegram
-        </a>
-        
-        <p class="mt-6 text-center text-sm text-neutral-400">
-          ✅ Disponible 24/7 · ⚡ Respuestas rápidas · 🔒 Seguro y privado
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</body>
-</html>
+@endsection
