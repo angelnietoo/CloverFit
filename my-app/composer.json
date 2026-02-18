@@ -13,8 +13,7 @@
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "*",
-        "larswiegers/laravel-maps": "*",
-        "paypal/rest-api-sdk-php": "*"
+        "larswiegers/laravel-maps": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
