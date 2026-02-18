@@ -244,26 +244,18 @@
     </section>
 
     <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
-<section class="mt-16 flex justify-center items-center space-x-8">
-  <div class="w-1/2">
-    <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
-    <p class="mt-4 text-neutral-300">
-      Dirección:<br>
-      Calle Ejemplo 123, Ciudad — 28000
-    </p>
-    <p class="mt-4 text-neutral-300">
-      Horario:<br>
-      Lun - Vie: 06:00 - 22:00 · Sáb: 08:00 - 14:00
-    </p>
-  </div>
+<section id="encuentranos" class="mt-16">
+  <h2 class="text-3xl font-extrabold text-center text-white">Encuéntranos</h2>
+  <p class="mt-2 text-center text-neutral-300">Calle Ejemplo 123, Ciudad — 28000 · Lun - Vie: 06:00 - 22:00 · Sáb: 08:00 - 14:00</p>
 
-  <!-- Mapa muy pequeño -->
-  <div class="w-1/2 h-16"> <!-- Reduje la altura a h-16 para hacerlo muy pequeño -->
-    <x-maps-leaflet 
-      :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
-      :zoomLevel="15" 
-      :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
-    />
+  <div class="mt-6 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+    <div class="w-full h-72 md:h-96">
+      <x-maps-leaflet 
+        :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
+        :zoomLevel="15" 
+        :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
+      />
+    </div>
   </div>
 </section>
 
