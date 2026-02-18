@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€34,99</div>
+                                <div class="text-3xl font-extrabold text-red-400">€24,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
                             </div>
 
@@ -125,7 +125,7 @@
                             </div>
 
                             <div class="mt-4 flex items-baseline gap-2">
-                                <div class="text-3xl font-extrabold text-red-400">€45,99</div>
+                                <div class="text-3xl font-extrabold text-red-400">€35,99</div>
                                 <div class="text-sm text-neutral-400">/ mes</div>
                             </div>
 
@@ -137,6 +137,9 @@
                                 <li class="flex gap-2"><span class="text-red-400">•</span> Acceso total + zonas premium</li>
                                 <li class="flex gap-2"><span class="text-red-400">•</span> Entrenamiento personalizado</li>
                                 <li class="flex gap-2"><span class="text-red-400">•</span> Prioridad en reservas</li>
+                                <li class="flex gap-2"><span class="text-red-400">•</span> Acceso a piscina privada</li>
+                                <li class="flex gap-2"><span class="text-red-400">•</span> Máquinas de rayos UVA</li>
+                                <li class="flex gap-2"><span class="text-red-400">•</span> Zona exclusiva de fisioterapia</li>
                             </ul>
 
                             <div class="mt-5 text-xs text-neutral-500">
@@ -169,12 +172,20 @@
             © {{ date('Y') }} CloverFit
         </p>
 
+        {{-- Información de descuento --}}
+        <div class="mt-8 text-center text-sm text-neutral-400">
+            Si tienes tarjeta de Familia Numerosa o carnet de estudiante, obtendrás un descuento del 15% en tu plan. 
+            Sin embargo, debido a las políticas de verificación y la implementación de inteligencia artificial en el sistema, 
+            este tipo de documentos deben ser presentados físicamente en el establecimiento para aplicar el descuento. 
+            En caso de realizar el pago a través de la página web, no podrás acceder a este beneficio en línea.
+        </div>
+
         {{-- Tabla comparativa --}}
         <div class="mt-12">
             <h3 class="text-2xl font-extrabold text-white text-center mb-8">
                 Comparativa de planes
             </h3>
-            
+
             <div class="overflow-x-auto rounded-2xl border border-white/10">
                 <table class="w-full">
                     <thead>
@@ -286,6 +297,11 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    {{-- Aquí se añade la imagen de CloverFit2 --}}
+    <div class="mt-8 text-center">
+        <img src="{{ asset('imagenes/cloverfit2.jpg') }}" alt="CloverFit Imagen" class="rounded-2xl">
     </div>
 </div>
 @endsection

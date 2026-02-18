@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Crea una nueva instancia del controlador.
@@ -66,13 +66,15 @@ class LoginController extends Controller
      * Acción después de la autenticación exitosa.
      *
      * @param \Illuminate\Http\Request $request
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     protected function authenticated(Request $request, $user)
     {
-        // Aquí puedes agregar lógica adicional después de que el usuario se haya autenticado
-        // Por ejemplo, almacenar algo en la base de datos, registrar eventos, etc.
-        // Ejemplo: Log de un evento cuando el usuario se autentique
-        \Log::info('Usuario autenticado: ' . $user->name);
+        // Redirigir según el rol del usuario
+        if (isset($user->role) && $user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return redirect()->intended(route('home'));
     }
 }

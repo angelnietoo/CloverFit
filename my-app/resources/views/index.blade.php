@@ -1,60 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CloverFit — Tu gimnasio, tu ritmo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="CloverFit - gimnasio local: clases, entrenadores, membresías y más." />
-</head>
+@extends('layouts.app')
 
-<body class="antialiased bg-neutral-950 text-white">
+@section('content')
 
-  <!-- NAV -->
-  <header class="bg-neutral-950/90 backdrop-blur border-b border-white/10">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="{{ url('/') }}" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-red-600 rounded-md flex items-center justify-center text-white font-extrabold">CF</div>
-        <span class="font-semibold text-lg tracking-wide">CloverFit</span>
-      </a>
+  <!-- HERO a ancho completo con imagen de fondo -->
+  <section class="relative w-full h-[60vh] md:h-[70vh]">
+    <img src="{{ asset('imagenes/cloverfit.jpg') }}" alt="CloverFit Hero"
+         class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/50"></div>
+  </section>
 
-      <nav class="hidden md:flex gap-6 items-center text-sm text-neutral-200">
-        <a href="#clases" class="hover:text-red-500 transition">Clases</a>
-        <a href="#entrenadores" class="hover:text-red-500 transition">Entrenadores</a>
-        <a href="#membresias" class="hover:text-red-500 transition">Membresías</a>
-        <a href="#contacto" class="hover:text-red-500 transition">Contacto</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        @guest
-          <a href="{{ route('login') }}" class="text-sm text-neutral-200 hover:text-red-500 transition">Iniciar sesión</a>
-          <a href="{{ route('register') }}"
-             class="ml-2 inline-block px-4 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition">
-            Regístrate
-          </a>
-        @else
-          <a href="{{ route('dashboard') }}"
-             class="inline-block px-4 py-2 rounded-md bg-neutral-900 text-sm border border-white/10 hover:border-red-500/60 transition">
-            Panel
-          </a>
-        @endguest
-      </div>
-    </div>
-  </header>
-
-  <!-- IMAGE BELOW HEADER -->
-  <div class="w-full relative overflow-hidden" style="height: 650px;">
-    <img src="{{ asset('imagenes/gimnasio.jpg') }}"
-         alt="Gimnasio"
-         class="w-full h-full object-cover object-top" />
-
-    <!-- overlay suave para que el texto luego combine mejor -->
-    <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/10 via-neutral-950/15 to-neutral-950/75"></div>
-  </div>
-
-  <!-- HERO -->
+  
   <main class="container mx-auto px-6 py-12">
 
+    <!-- HERO de texto + imagen lateral -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
@@ -85,7 +43,7 @@
 
       <div class="relative">
         <div class="rounded-2xl p-4 border border-white/10 bg-neutral-900 shadow-lg">
-          <img src="{{ asset('imagenes/gimnasio.jpg') }}" alt="gimnasio"
+          <img src="{{ asset('imagenes/cloverfit2.jpg') }}" alt="gimnasio"
                class="rounded-xl w-full h-80 object-cover" />
         </div>
 
@@ -96,7 +54,7 @@
       </div>
     </section>
 
-    <!-- MEMBERSHIPS -->
+    <!-- MEMBERSHIPS (MODIFICADO) -->
     <section id="membresias" class="mt-16 bg-neutral-900/60 p-8 rounded-2xl border border-white/10">
       <h2 class="text-2xl font-bold text-center">Nuestras Suscripciones</h2>
       <p class="mt-2 text-center text-neutral-300">
@@ -106,10 +64,19 @@
       <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
-          <h3 class="text-xl font-semibold">Básica</h3>
-          <p class="mt-2 text-neutral-300">Acceso a todas las clases y zona estándar.</p>
-          <p class="text-3xl font-extrabold mt-4 text-red-400">€19,99<span class="text-base text-neutral-300 font-medium">/mes</span></p>
-          <p class="text-xs text-green-400 mt-2">Primer mes: <span class="font-bold">€9.99</span></p>
+          <h3 class="text-xl font-semibold">FIT</h3>
+
+          <!-- PRECIO ARRIBA -->
+          <p class="text-3xl font-extrabold mt-3 text-red-400">
+            €19.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+          </p>
+          <p class="text-xs text-green-400 mt-1">
+            Primer mes: <span class="font-bold">€9,99</span>
+          </p>
+
+          <!-- DESCRIPCIÓN ABAJO -->
+          <p class="mt-4 text-neutral-300">Acceso a todas las clases y zona estándar.</p>
+
           <a href="{{ route('suscripcion.seleccionar') }}"
              class="mt-6 inline-block w-full text-center px-6 py-3 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500 transition">
             Seleccionar
@@ -120,10 +87,20 @@
           <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-500/15 text-red-300 border border-red-500/30">
             Más popular
           </div>
-          <h3 class="text-xl font-semibold mt-3">Premium</h3>
-          <p class="mt-2 text-neutral-300">Zonas premium + 4 sesiones con entrenador personal.</p>
-          <p class="text-3xl font-extrabold mt-4 text-red-400">€35<span class="text-base text-neutral-300 font-medium">/mes</span></p>
-          <p class="text-xs text-green-400 mt-2">Primer mes: <span class="font-bold">€9.99</span></p>
+
+          <h3 class="text-xl font-semibold mt-3">PRO</h3>
+
+          <!-- PRECIO ARRIBA -->
+          <p class="text-3xl font-extrabold mt-3 text-red-400">
+            €24.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+          </p>
+          <p class="text-xs text-green-400 mt-1">
+            Primer mes: <span class="font-bold">€9,99</span>
+          </p>
+
+          <!-- DESCRIPCIÓN ABAJO -->
+          <p class="mt-4 text-neutral-300">Zonas premium + 4 sesiones con entrenador personal.</p>
+
           <a href="{{ route('suscripcion.seleccionar') }}"
              class="mt-6 inline-block w-full text-center px-6 py-3 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500 transition">
             Seleccionar
@@ -131,15 +108,25 @@
         </div>
 
         <div class="bg-neutral-950 p-6 rounded-2xl border border-white/10 hover:border-red-500/60 transition">
-          <h3 class="text-xl font-semibold">VIP</h3>
-          <p class="mt-2 text-neutral-300">Acceso total + zonas exclusivas + entrenador personal.</p>
-          <p class="text-3xl font-extrabold mt-4 text-red-400">€45<span class="text-base text-neutral-300 font-medium">/mes</span></p>
-          <p class="text-xs text-green-400 mt-2">Primer mes: <span class="font-bold">€9.99</span></p>
+          <h3 class="text-xl font-semibold">ELITE</h3>
+
+          <!-- PRECIO ARRIBA -->
+          <p class="text-3xl font-extrabold mt-3 text-red-400">
+            €35.99<span class="text-base text-neutral-300 font-medium">/mes</span>
+          </p>
+          <p class="text-xs text-green-400 mt-1">
+            Primer mes: <span class="font-bold">€9,99</span>
+          </p>
+
+          <!-- DESCRIPCIÓN ABAJO -->
+          <p class="mt-4 text-neutral-300">Acceso total + zonas exclusivas + entrenador personal.</p>
+
           <a href="{{ route('suscripcion.seleccionar') }}"
              class="mt-6 inline-block w-full text-center px-6 py-3 rounded-md bg-red-600 text-white font-semibold hover:bg-red-500 transition">
             Seleccionar
           </a>
         </div>
+
       </div>
     </section>
 
@@ -256,6 +243,22 @@
       </div>
     </section>
 
+    <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
+<section id="encuentranos" class="mt-16">
+  <h2 class="text-3xl font-extrabold text-center text-white">Encuéntranos</h2>
+  <p class="mt-2 text-center text-neutral-300">Calle Ejemplo 123, Ciudad — 28000 · Lun - Vie: 06:00 - 22:00 · Sáb: 08:00 - 14:00</p>
+
+  <div class="mt-6 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
+    <div class="w-full h-72 md:h-96">
+      <x-maps-leaflet 
+        :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
+        :zoomLevel="15" 
+        :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
+      />
+    </div>
+  </div>
+</section>
+
     <!-- FOOTER -->
     <footer class="mt-16 text-sm text-neutral-400">
       <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -268,5 +271,4 @@
     </footer>
 
   </main>
-</body>
-</html>
+@endsection

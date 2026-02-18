@@ -11,10 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Crear la tabla `member` (renombrada de `members`)
-        Schema::create('member', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('membership_id')->nullable()->constrained('memberships')->onDelete('set null');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phone')->nullable();
+            $table->text('notes')->nullable();
+            $table->date('membership_start_date')->nullable();
+            $table->date('membership_end_date')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -23,6 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('member'); // Eliminar la tabla `member`
+        Schema::dropIfExists('members');
     }
 };
+
