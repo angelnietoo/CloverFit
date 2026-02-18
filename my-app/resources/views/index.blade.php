@@ -28,7 +28,7 @@
       <div class="flex items-center gap-3">
         @guest
           <a href="{{ route('login') }}" class="text-sm text-neutral-200 hover:text-red-500 transition">Iniciar sesión</a>
-          <a href="{{ route('register') }}"
+          <a href="{{ route('register') }} "
              class="ml-2 inline-block px-4 py-2 rounded-md bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition">
             Regístrate
           </a>
@@ -306,26 +306,69 @@
 
   </main>
  <!-- SECCIÓN DE MAPA Y UBICACIÓN -->
-<section class="mt-16 flex justify-center items-center space-x-8">
-  <div class="w-1/2">
-    <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
-    <p class="mt-4 text-neutral-300">
-      Dirección:<br>
-      Calle Ave del Paraíso, nº6, El Puerto de Santa María, 11500, Cádiz
-    </p>
-    <p class="mt-4 text-neutral-300">
-      Horario:<br>
-      Lunes a Viernes: 08:00 a 21:00
-    </p>
-  </div>
+<section class="mt-16 container mx-auto px-6">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+    <!-- Contenido a la izquierda -->
+    <div class="lg:col-span-1">
+      <h2 class="text-2xl font-bold text-white">Encuentranos</h2>
+      <p class="mt-4 text-neutral-300">
+        <span class="text-red-400 font-semibold">Dirección:</span><br>
+        Calle Ave del Paraíso, nº6<br>
+        El Puerto de Santa María, 11500<br>
+        Cádiz
+      </p>
+      <p class="mt-6 text-neutral-300">
+        <span class="text-red-400 font-semibold">Horario:</span><br>
+        Lunes a Viernes: 08:00 a 21:00<br>
+        Sábados: Por consulta
+      </p>
+      <p class="mt-6 text-neutral-300">
+        <span class="text-red-400 font-semibold">Teléfono:</span><br>
+        +34 600 000 000
+      </p>
+    </div>
 
-  <!-- Mapa pequeño -->
-  <div class="w-1/2 h-40"> <!-- Cambié el valor de h-60 a h-40 -->
-    <x-maps-leaflet 
-      :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
-      :zoomLevel="15" 
-      :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
-    />
+    <!-- Mapa a la derecha (ocupa 2 columnas) -->
+    <div class="lg:col-span-2 h-full">
+      <x-maps-leaflet 
+        :centerPoint="['lat' => 36.595531, 'long' => -6.230796]" 
+        :zoomLevel="15" 
+        :markers="[['lat' => 36.595531, 'long' => -6.230796]]"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Telegram - Botón para contactar directamente con el bot -->
+<section id="telegram" class="mt-16 py-12 bg-gradient-to-r from-blue-900/20 to-blue-800/20 border-t border-blue-500/30">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-extrabold text-white">📱 Contacta con nosotros en Telegram</h2>
+      <p class="mt-2 text-neutral-300">Soporte inmediato - Respuestas en tiempo real</p>
+    </div>
+    
+    <div class="flex justify-center">
+      <div class="max-w-md w-full">
+        @php
+          $botUsername = env('TELEGRAM_BOT_USERNAME', 'cloverfit_bot');
+        @endphp
+        
+        <!-- Botón para abrir chat con el bot -->
+        <a href="https://t.me/{{ $botUsername }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center justify-center gap-3 w-full px-8 py-5 rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white font-bold text-xl hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 transition shadow-xl hover:shadow-blue-500/40 transform hover:scale-105">
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0m5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.461c.54-.203 1.01.122.84.953z"/>
+          </svg>
+          Abrir Telegram
+        </a>
+        
+        <p class="mt-6 text-center text-sm text-neutral-400">
+          ✅ Disponible 24/7 · ⚡ Respuestas rápidas · 🔒 Seguro y privado
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 

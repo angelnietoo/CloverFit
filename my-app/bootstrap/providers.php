@@ -1,5 +1,25 @@
 <?php
 
 return [
+    Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+    Illuminate\Encryption\EncryptionServiceProvider::class,
+    Illuminate\Filesystem\FilesystemServiceProvider::class,
+    Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+    Illuminate\Database\DatabaseServiceProvider::class,
+    Illuminate\View\ViewServiceProvider::class,
+    Illuminate\Cache\CacheServiceProvider::class,
+    Illuminate\Cookie\CookieServiceProvider::class,
+    Illuminate\Session\SessionServiceProvider::class,
+    Illuminate\Queue\QueueServiceProvider::class,
+    Illuminate\Hashing\HashServiceProvider::class,
+    Illuminate\Mail\MailServiceProvider::class,
+    Illuminate\Validation\ValidationServiceProvider::class,
+    Illuminate\Foundation\Support\Providers\EventServiceProvider::class,
+    Illuminate\Foundation\Support\Providers\RouteServiceProvider::class,
+    Illuminate\Routing\RoutingServiceProvider::class,
+    Illuminate\Pagination\PaginationServiceProvider::class,
+    Illuminate\Auth\AuthServiceProvider::class,
+    Illuminate\Broadcasting\BroadcastServiceProvider::class,
     App\Providers\AppServiceProvider::class,
+    Telegram\Bot\Laravel\TelegramServiceProvider::class,
 ];

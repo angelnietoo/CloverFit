@@ -15,7 +15,8 @@
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "*",
         "larswiegers/laravel-maps": "*",
-        "paypal/rest-api-sdk-php": "*"
+        "paypal/paypal-server-sdk": "^2.2",
+        "telegram-bot/api": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
